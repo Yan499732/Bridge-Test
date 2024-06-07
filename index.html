@@ -11,7 +11,7 @@
 	</script>
 </head>
 <body>
-	<button style="width: 200px; height: 50px;" onclick="fooButtonClick()"></button>
+	<button style="width: 200px; height: 50px;" onclick="Pay()">1</button>
 	<script>
 		function fooButtonClick()
 		{
@@ -24,6 +24,25 @@
 		        console.log('Ошибка при показе');
 		    })
 		    .catch((error) => { console.log(error); /* Ошибка */ });
+		}
+
+		function Pay()
+		{
+			vkBridge.send('VKWebAppOpenPayForm', {
+			    app_id: 6909581,
+			    action: 'pay-to-user',
+			    params: {
+			      user_id: 743784474
+			    }})
+			  	.then((data) => {
+			    if (data.status) {
+			      // Экран VK Pay показан
+			    }
+		  	})
+		  	.catch((error) => {
+		    	// Ошибка
+		    	console.log(error);
+		  	});
 		}
 	</script>
 </body>
