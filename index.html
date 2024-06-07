@@ -12,6 +12,7 @@
 </head>
 <body>
 	<button style="width: 200px; height: 50px;" onclick="GetId()">5</button>
+	<button style="width: 200px; height: 50px;" onclick="Pay()">5</button>
 	<script>
 		function fooButtonClick()
 		{
@@ -31,10 +32,10 @@
 		function Pay()
 		{
 			vkBridge.send('VKWebAppOpenPayForm', {
-			    app_id: 6909581,
+			    app_id: 51940055,
 			    action: 'pay-to-user',
 			    params: {
-			      user_id: 743784474
+			      user_id: PlayerId
 			    }})
 			  	.then((data) => {
 			    if (data.status) {
