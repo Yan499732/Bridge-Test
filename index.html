@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>1</title>
+	<script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+	<script>
+  		// Отправляет событие инициализации нативному клиенту
+  		vkBridge.send('VKWebAppInit');
+	</script>
+</head>
+<body>
+	<button style="width: 200px; height: 50px;" onclick="fooButtonClick()"></button>
+	<script>
+		function fooButtonClick()
+		{
+		  // Показать рекламу
+		  bridge.send('VKWebAppShowNativeAds', { ad_format: 'reward' })
+		    .then((data) => {
+		      if (data.result) // Успех
+		        console.log('Реклама показана');
+		      else // Ошибка 
+		        console.log('Ошибка при показе');
+		    })
+		    .catch((error) => { console.log(error); /* Ошибка */ });
+		}
+	</script>
+</body>
+</html>
