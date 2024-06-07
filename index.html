@@ -16,7 +16,7 @@
 		function fooButtonClick()
 		{
 		  // Показать рекламу
-		  bridge.send('VKWebAppShowNativeAds', { ad_format: 'reward' })
+		  vkBridge.send('VKWebAppShowNativeAds', { ad_format: 'reward' })
 		    .then((data) => {
 		      if (data.result) // Успех
 		        console.log('Реклама показана');
