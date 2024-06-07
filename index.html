@@ -11,7 +11,7 @@
 	</script>
 </head>
 <body>
-	<button style="width: 200px; height: 50px;" onclick="GetId()">3</button>
+	<button style="width: 200px; height: 50px;" onclick="GetId()">4</button>
 	<script>
 		function fooButtonClick()
 		{
@@ -52,7 +52,7 @@
 			.then((data) => { 
 			    if (data.id) {
 			      // Данные пользователя получены
-			      console.log(data);
+			      console.log(data.id);
 			    }    
 			})
 			.catch((error) => {
