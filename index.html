@@ -47,7 +47,7 @@
 
 		function GetId()
 		{
-			bridge.send('VKWebAppGetUserInfo', {
+			vkBridge.send('VKWebAppGetUserInfo', {
 			})
 			.then((data) => { 
 			    if (data.id) {
