@@ -11,10 +11,12 @@
 	</script>
 </head>
 <body>
-	<button style="width: 200px; height: 50px;" onclick="GetId()">4</button>
+	<button style="width: 200px; height: 50px;" onclick="GetId()">5</button>
 	<script>
 		function fooButtonClick()
 		{
+			var PlayerId;
+
 		  // Показать рекламу
 		  vkBridge.send('VKWebAppShowNativeAds', { ad_format: 'reward' })
 		    .then((data) => {
@@ -52,7 +54,8 @@
 			.then((data) => { 
 			    if (data.id) {
 			      // Данные пользователя получены
-			      console.log(data.id);
+			      PlayerId = data.id;
+			      console.log(PlayerId);
 			    }    
 			})
 			.catch((error) => {
